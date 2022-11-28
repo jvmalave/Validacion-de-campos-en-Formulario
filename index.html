@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body class="bg-secundary">
+	<form class="row g-3 needs-validation" novalidate>
+    	<section class="d-flex justify-content-center">
+       		<div class="card col-sm-6 p-3">
+            	<div class="mb-3">
+                	<h4>Contacto</h4>
+            	</div>
+            	<div class=mb-2">
+                	<form action ="">       
+                    	<div class=mb-2>
+                        	<label for="nombre"><h6>Nombre</h6></label>
+                        	<input type="text" class="form-control" name="nombre" maxlenth="20" required id="nombre"  placeholder="Ingrese el nombre -->  ej: Jose">
+							<div class="valid-feedback">
+								¡Excelente!
+						  	</div>
+							<div class="invalid-feedback"> 
+								Es necesario que ingrese su nombre
+                    	</div>
+                    	<div class=mb-2>
+                        	<label for="apellido"><h6>Apellido</h6></label>
+                        	<input type="text" class="form-control" name="apellido" maxlenth="20" required id="apellido" placeholder="Ingrese el apellido -->  ej: Garcia">
+							<div class="valid-feedback">
+								¡Excelente!
+						  	</div>
+							<div class="invalid-feedback"> 
+								Es necesario que ingrese su apellido
+						</div>
+						<div class=mb-2>
+							<label for="edad"><h6>Edad</h6></label>
+							<input type="text" class="form-control" name="edad" maxlenth="3" required id="edad" placeholder="Ingrese su edad--> ej: 57">
+							<div class="valid-feedback">
+								¡Excelente!
+							</div>
+							<div class="invalid-feedback"> 
+								Es necesario que ingrese su edad
+						</div>
+						<div class=mb-2>
+                			<p style="text-align: center;">
+                    			<button type="subtmit" class="btn btn-primary">Enviar</button>
+                			</p>
+						</div>
+					</form>	
+            	</div> 
+		</section>		
+	</form>
+
+	<script>
+				// Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
+		(function () {
+		'use strict'
+
+		// Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+		var forms = document.querySelectorAll('.needs-validation')
+
+		// Bucle sobre ellos y evitar el envío
+		Array.prototype.slice.call(forms)
+			.forEach(function (form) {
+			form.addEventListener('submit', function (event) {
+				if (!form.checkValidity()) {
+				event.preventDefault()
+				event.stopPropagation()
+				}
+
+				form.classList.add('was-validated')
+			}, false)
+			})
+		})()
+	</script>
+</body>
+</html>
